@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: import-test-go-rgwfrdew-gitops
+  description: This is GitOps manifest for import-test-go-rgwfrdew   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=import-test-go-rgwfrdew
+    backstage.io/kubernetes-id: import-test-go-rgwfrdew 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: import-test-go-rgwfrdew
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:import-test-go-rgwfrdew
